@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida | Juan Sebastian Patiño</title>
+    <link rel="stylesheet" href="{% static 'app_cv/css/estilo.css' %}">
+</head>
+<body>
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="perfil-box">
+                <div class="foto-perfil">
+                    <span>JS</span>
+                </div>
+                <h1>Juan Sebastian Patiño</h1>
+                <p class="cargo">Desarrollador Django Junior</p>
+            </div>
+
+            <section class="datos-personales">
+                <h2>Datos Personales</h2>
+                <ul>
+                    <li><strong>Nombre:</strong> Juan Sebastian Patiño</li>
+                    <li><strong>Correo:</strong> tucorreo@example.com</li>
+                    <li><strong>Teléfono:</strong> +57 000 000 0000</li>
+                    <li><strong>Ciudad:</strong> Colombia</li>
+                    <li><strong>GitHub:</strong> 
+                        <a href="https://github.com/sebastianUCC2024" target="_blank">
+                            sebastianUCC2024
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <main class="contenido">
+            <section class="seccion">
+                <h2>Perfil Profesional</h2>
+                <p>
+                    Estudiante y desarrollador enfocado en Django, con interés en el desarrollo
+                    web backend y la construcción de aplicaciones funcionales, organizadas y
+                    escalables. Me caracterizo por mi compromiso con el aprendizaje continuo,
+                    la resolución de problemas y la creación de soluciones prácticas usando
+                    tecnologías modernas. Tengo conocimientos en Python, HTML, CSS y estructura
+                    de proyectos en Django sin depender de modelos o bases de datos cuando el
+                    proyecto requiere un enfoque estático y limpio.
+                </p>
+            </section>
+
+            <section class="seccion">
+                <h2>Formación Académica</h2>
+                <div class="item">
+                    <h3>Ingeniería de Software</h3>
+                    <p>Universidad / Institución: [Nombre de tu universidad]</p>
+                    <span>En formación</span>
+                </div>
+
+                <div class="item">
+                    <h3>Cursos Complementarios</h3>
+                    <p>Python, Django, HTML, CSS, Git y GitHub</p>
+                    <span>Formación complementaria en desarrollo web</span>
+                </div>
+            </section>
+
+            <section class="seccion">
+                <h2>Repositorio</h2>
+                <p>
+                    Puedes ver mis proyectos y avances de desarrollo en mi repositorio oficial:
+                </p>
+                <a class="btn-github" href="https://github.com/sebastianUCC2024" target="_blank">
+                    Ver repositorio en GitHub
+                </a>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
