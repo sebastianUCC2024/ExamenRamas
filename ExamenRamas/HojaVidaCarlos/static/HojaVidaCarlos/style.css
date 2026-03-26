@@ -1,12 +1,15 @@
 :root {
-    --bg: #f6f6f3;
-    --surface: rgba(255, 255, 255, 0.88);
+    --bg: #f3f5f8;
+    --surface: rgba(255, 255, 255, 0.78);
     --surface-strong: #ffffff;
     --text: #111111;
-    --muted: #5f5f64;
-    --line: rgba(17, 17, 17, 0.08);
-    --line-strong: rgba(17, 17, 17, 0.14);
-    --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+    --muted: #5b6472;
+    --line: rgba(15, 23, 42, 0.08);
+    --line-strong: rgba(15, 23, 42, 0.14);
+    --accent: #2563eb;
+    --accent-soft: rgba(37, 99, 235, 0.14);
+    --accent-soft-strong: rgba(37, 99, 235, 0.24);
+    --shadow: 0 28px 80px rgba(15, 23, 42, 0.10);
     --radius-xl: 28px;
     --radius-lg: 22px;
     --radius-md: 16px;
@@ -27,9 +30,10 @@ body {
     color: var(--text);
     font-family: "Segoe UI Variable", "Aptos", "Trebuchet MS", sans-serif;
     background:
-        radial-gradient(circle at top left, rgba(17, 17, 17, 0.06), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(17, 17, 17, 0.05), transparent 24%),
-        linear-gradient(180deg, #fbfbf9 0%, var(--bg) 100%);
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 30%),
+        radial-gradient(circle at 85% 12%, rgba(99, 102, 241, 0.14), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.10), transparent 26%),
+        linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
 }
 
 body::before {
@@ -38,8 +42,8 @@ body::before {
     inset: 0;
     pointer-events: none;
     background-image:
-        linear-gradient(rgba(17, 17, 17, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
     background-size: 30px 30px;
     mask-image: radial-gradient(circle at center, black 42%, transparent 82%);
 }
@@ -70,6 +74,22 @@ body::before {
 
 .hero-copy {
     padding: 34px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.72)),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 34%);
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-copy::after {
+    content: "";
+    position: absolute;
+    inset: auto -40px -46px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 68%);
+    pointer-events: none;
 }
 
 .eyebrow,
@@ -85,6 +105,10 @@ body::before {
 
 .eyebrow {
     margin-bottom: 18px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.66);
 }
 
 .hero h1 {
@@ -92,12 +116,13 @@ body::before {
     font-size: clamp(2.9rem, 6vw, 5.2rem);
     line-height: 0.92;
     letter-spacing: -0.05em;
+    max-width: 8ch;
 }
 
 .lead {
     margin: 0 0 28px;
     max-width: 56ch;
-    color: #303036;
+    color: #2f3440;
     font-size: 1.05rem;
     line-height: 1.75;
 }
@@ -116,22 +141,23 @@ body::before {
 }
 
 .primary-link {
-    background: #111111;
-    color: #f5f5f2;
-    border: 1px solid #111111;
+    background: linear-gradient(135deg, #111111, #1f2937);
+    color: #f5f7fb;
+    border: 1px solid rgba(17, 17, 17, 0.9);
     font: 700 0.84rem/1 "Consolas", "Cascadia Code", monospace;
+    box-shadow: 0 16px 30px rgba(17, 17, 17, 0.18);
 }
 
 .secondary-link {
     color: var(--text);
     border: 1px solid var(--line-strong);
-    background: var(--surface-strong);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.92));
     font: 600 0.88rem/1.2 "Consolas", "Cascadia Code", monospace;
 }
 
 .primary-link:hover,
 .secondary-link:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .hero-panel,
@@ -143,6 +169,9 @@ body::before {
     display: grid;
     gap: 18px;
     align-content: start;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.70)),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 32%);
 }
 
 .section-kicker {
@@ -184,11 +213,14 @@ body::before {
 
 .card {
     min-height: 100%;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.74)),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 28%);
 }
 
 .body-copy {
     margin: 0 0 14px;
-    color: #2f2f34;
+    color: #2f3440;
     line-height: 1.75;
 }
 
@@ -198,7 +230,7 @@ body::before {
 
 .timeline-item {
     padding-left: 18px;
-    border-left: 2px solid var(--line-strong);
+    border-left: 2px solid var(--accent-soft-strong);
 }
 
 .timeline-item h2 {
