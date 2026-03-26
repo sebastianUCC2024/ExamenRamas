@@ -1,0 +1,271 @@
+:root {
+    --bg: #f6f6f3;
+    --surface: rgba(255, 255, 255, 0.88);
+    --surface-strong: #ffffff;
+    --text: #111111;
+    --muted: #5f5f64;
+    --line: rgba(17, 17, 17, 0.08);
+    --line-strong: rgba(17, 17, 17, 0.14);
+    --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+    --max-width: 1120px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    font-family: "Segoe UI Variable", "Aptos", "Trebuchet MS", sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(17, 17, 17, 0.06), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(17, 17, 17, 0.05), transparent 24%),
+        linear-gradient(180deg, #fbfbf9 0%, var(--bg) 100%);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(17, 17, 17, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    mask-image: radial-gradient(circle at center, black 42%, transparent 82%);
+}
+
+.page-shell {
+    position: relative;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 38px 20px 56px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.45fr 0.85fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.hero-copy,
+.hero-panel,
+.card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+}
+
+.hero-copy {
+    padding: 34px;
+}
+
+.eyebrow,
+.section-kicker,
+.stat-item span,
+.info-row span {
+    display: inline-block;
+    color: var(--muted);
+    font: 700 0.76rem/1 "Consolas", "Cascadia Code", monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    margin: 0 0 16px;
+    font-size: clamp(2.9rem, 6vw, 5.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+}
+
+.lead {
+    margin: 0 0 28px;
+    max-width: 56ch;
+    color: #303036;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.primary-link,
+.secondary-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 46px;
+    padding: 0 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.primary-link {
+    background: #111111;
+    color: #f5f5f2;
+    border: 1px solid #111111;
+    font: 700 0.84rem/1 "Consolas", "Cascadia Code", monospace;
+}
+
+.secondary-link {
+    color: var(--text);
+    border: 1px solid var(--line-strong);
+    background: var(--surface-strong);
+    font: 600 0.88rem/1.2 "Consolas", "Cascadia Code", monospace;
+}
+
+.primary-link:hover,
+.secondary-link:hover {
+    transform: translateY(-1px);
+}
+
+.hero-panel,
+.card {
+    padding: 28px;
+}
+
+.hero-panel {
+    display: grid;
+    gap: 18px;
+    align-content: start;
+}
+
+.section-kicker {
+    margin-bottom: 14px;
+}
+
+.stat-list,
+.info-list {
+    display: grid;
+    gap: 14px;
+}
+
+.stat-item,
+.info-row {
+    display: grid;
+    gap: 6px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+}
+
+.stat-item:last-child,
+.info-row:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.stat-item strong,
+.info-row strong {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 18px;
+}
+
+.card {
+    min-height: 100%;
+}
+
+.body-copy {
+    margin: 0 0 14px;
+    color: #2f2f34;
+    line-height: 1.75;
+}
+
+.body-copy:last-of-type {
+    margin-bottom: 0;
+}
+
+.timeline-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--line-strong);
+}
+
+.timeline-item h2 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+}
+
+.timeline-item p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 920px) {
+    .hero,
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-shell {
+        padding: 20px 14px 40px;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .card {
+        padding: 22px;
+        border-radius: var(--radius-lg);
+    }
+
+    .hero h1 {
+        font-size: clamp(2.2rem, 14vw, 3.7rem);
+    }
+
+    .lead,
+    .body-copy {
+        font-size: 0.97rem;
+    }
+}
+
+@media print {
+    :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface-strong: #ffffff;
+        --shadow: none;
+    }
+
+    body {
+        background: #ffffff;
+    }
+
+    body::before {
+        display: none;
+    }
+
+    .page-shell {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .card {
+        box-shadow: none;
+        backdrop-filter: none;
+    }
+}

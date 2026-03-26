@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoja de Vida - Sebastián</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <div class="profile">
+            <img src="{% static 'img/profile.jpg' %}" alt="Foto">
+            <h2>Sebastián</h2>
+            <p>Ingeniero de Software</p>
+        </div>
+
+        <div class="contact">
+            <h3>Contacto</h3>
+            <p>Email: sebastian@email.com</p>
+            <p>GitHub: github.com/sebastian</p>
+        </div>
+
+        <div class="skills">
+            <h3>Habilidades</h3>
+            <ul>
+                <li>Python / Django</li>
+                <li>HTML / CSS</li>
+                <li>JavaScript</li>
+                <li>SQL</li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="content">
+
+        <section>
+            <h2>Perfil Profesional</h2>
+            <p>
+                Estudiante de ingeniería de software con enfoque en desarrollo web,
+                manejo de Django y construcción de aplicaciones escalables.
+            </p>
+        </section>
+
+        <section>
+            <h2>Educación</h2>
+            <p>Universidad Cooperativa de Colombia</p>
+            <p>Ingeniería de Software (En curso)</p>
+        </section>
+
+        <section>
+            <h2>Proyectos</h2>
+            <ul>
+                <li>
+                    App de servicios para mascotas (Django)
+                </li>
+                <li>
+                    Sistema de monitoreo con Grafana y Prometheus
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Experiencia</h2>
+            <p>Proyectos académicos y desarrollo colaborativo</p>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
